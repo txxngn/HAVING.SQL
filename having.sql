@@ -1,6 +1,14 @@
 --WHERE clause (which filters the rows which are to be grouped), then how exactly do we filter the grouped rows?
 --Luckily, SQL allows us to do this by adding an additional HAVING clause which is used specifically with the GROUP BY clause to allow us to filter grouped rows from the result set.
-    
+"
+SELECT group_by_column, AGG_FUNC(column_expression) AS aggregate_result_alias, …
+FROM mytable
+WHERE condition
+GROUP BY column
+HAVING group_condition;
+"
+
+
 --How many of the sales reps have more than 5 accounts that they manage?
 
 SELECT s.id, s.name, COUNT(*) AS num_accounts
